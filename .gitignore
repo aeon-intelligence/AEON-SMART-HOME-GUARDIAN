@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .env
+EOFcat > .gitignore << 'EOF'
+.venv/
+__pycache__/
+*.pyc
+.env
