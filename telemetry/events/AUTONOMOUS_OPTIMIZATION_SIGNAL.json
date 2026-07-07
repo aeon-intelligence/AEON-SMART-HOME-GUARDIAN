@@ -1,0 +1,11 @@
+{
+  "event_type": "AUTONOMOUS_OPTIMIZATION_SIGNAL",
+  "source": "",
+  "demand_score": 0,
+  "inventory_health": 0,
+  "margin_score": 0,
+  "risk_score": 0,
+  "optimization_score": 0,
+  "decision": "",
+  "timestamp": ""
+}
