@@ -1,0 +1,9 @@
+{
+  "event_type": "EDGE_DEVICE_SIGNAL",
+  "device_id": "",
+  "device_type": "mobile_wms",
+  "connection_status": "",
+  "local_event_count": 0,
+  "sync_status": "",
+  "timestamp": ""
+}
