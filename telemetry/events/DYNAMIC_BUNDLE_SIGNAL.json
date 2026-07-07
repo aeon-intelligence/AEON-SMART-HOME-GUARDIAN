@@ -1,0 +1,11 @@
+{
+  "event_type": "DYNAMIC_BUNDLE_SIGNAL",
+  "sku_group": [],
+  "branch_id": "",
+  "demand_score": 0,
+  "margin_score": 0,
+  "inventory_risk": 0,
+  "recommended_strategy": "",
+  "confidence": 0,
+  "timestamp": ""
+}
