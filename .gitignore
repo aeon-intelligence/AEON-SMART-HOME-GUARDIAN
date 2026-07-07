@@ -7,3 +7,4 @@ EOFcat > .gitignore << 'EOF'
 __pycache__/
 *.pyc
 .env
+.env
