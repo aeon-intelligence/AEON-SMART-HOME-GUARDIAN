@@ -1,30 +1,49 @@
-from cognitive_memory.episode.episode_memory import store_event
-from cognitive_memory.decision.decision_history import record_decision
-from cognitive_memory.lesson.lesson_extractor import extract_lesson
-from cognitive_memory.recall.pattern_recall import recall
-from cognitive_memory.organization.org_memory import save
+from cognitive_memory.event_memory.event_store import store as store_event
+from cognitive_memory.decision_memory.decision_store import store as store_decision
+from cognitive_memory.outcome_memory.outcome_store import store as store_outcome
+from cognitive_memory.retrieval.context_retriever import retrieve
+from cognitive_memory.memory_store.memory_engine import save
 
 
 event = store_event(
-    "INVENTORY_OPTIMIZATION",
-    "WASTE_REDUCED"
+    {
+        "type": "INVENTORY_RISK",
+        "value": 91
+    }
 )
 
-decision = record_decision(
-    "AUTO_REBALANCE_STOCK",
-    "SUCCESS"
+
+decision = store_decision(
+    {
+        "action": "OPTIMIZE_ALLOCATION"
+    }
 )
 
-lesson = extract_lesson(
-    decision
+
+outcome = store_outcome(
+    {
+        "result": "SUCCESS"
+    }
 )
 
-pattern = recall(
-    "STOCK_OPTIMIZATION"
+
+context = retrieve(
+    "previous inventory decisions"
 )
+
+
+memory = save(
+    {
+        "event": event,
+        "decision": decision,
+        "outcome": outcome,
+        "context": context
+    }
+)
+
 
 print(event)
 print(decision)
-print(lesson)
-print(pattern)
-print(save(lesson))
+print(outcome)
+print(context)
+print(memory)
