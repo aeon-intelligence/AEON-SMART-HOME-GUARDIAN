@@ -1,0 +1,11 @@
+{
+  "event_type": "MARGIN_EROSION_SIGNAL",
+  "sku": "",
+  "branch_id": "",
+  "discount_loss": 0,
+  "waste_cost": 0,
+  "promotion_efficiency": 0,
+  "erosion_score": 0,
+  "recommended_action": "",
+  "timestamp": ""
+}
