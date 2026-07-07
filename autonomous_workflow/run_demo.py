@@ -1,38 +1,34 @@
-from autonomous_workflow.agents.agent_registry import register_agent
-from autonomous_workflow.orchestrator.workflow_engine import create_workflow
-from autonomous_workflow.priority.priority_engine import assign_priority
-from autonomous_workflow.bus.agent_bus import send_message
+from autonomous_workflow.definition.workflow_engine import create
+from autonomous_workflow.routing.task_router import route
+from autonomous_workflow.approval.approval_controller import request
+from autonomous_workflow.optimization.process_optimizer import optimize
 from autonomous_workflow.memory.workflow_memory import save
 
 
-forecast_agent = register_agent(
-    "Forecast_Agent",
-    "Demand Prediction"
+workflow = create(
+    "INVENTORY_REPLENISHMENT",
+    [
+        "CHECK_STOCK",
+        "ANALYZE_DEMAND",
+        "APPROVE_ORDER"
+    ]
 )
 
-logistics_agent = register_agent(
-    "Logistics_Agent",
-    "Route Optimization"
+routing = route(
+    "DEMAND_ANALYSIS",
+    "FORECAST_AGENT"
 )
 
-workflow = create_workflow(
-    "INVENTORY_OPTIMIZATION"
+approval = request(
+    "AUTO_PURCHASE_ORDER"
 )
 
-priority = assign_priority(
-    workflow["workflow"],
-    "HIGH"
+optimization = optimize(
+    workflow
 )
 
-message = send_message(
-    forecast_agent["agent"],
-    logistics_agent["agent"],
-    "Demand forecast ready"
-)
-
-print(forecast_agent)
-print(logistics_agent)
 print(workflow)
-print(priority)
-print(message)
-print(save(workflow))
+print(routing)
+print(approval)
+print(optimization)
+print(save(optimization))

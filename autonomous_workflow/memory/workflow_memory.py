@@ -5,7 +5,7 @@ def save(record):
 
     return {
         "memory_type":
-            "WORKFLOW_EXECUTION_MEMORY",
+            "WORKFLOW_LEARNING_MEMORY",
         "record": record,
         "timestamp":
             datetime.utcnow().isoformat()
