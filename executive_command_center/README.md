@@ -1,12 +1,13 @@
-# AEON MATRIX Executive Command Center
+# AEON MATRIX Executive Command Center Intelligence Layer v61.0
 
 Purpose:
 
-Executive visibility layer for enterprise intelligence.
+Provide executive-level operational intelligence.
 
-Features:
+Capabilities:
 
-- Real-time signal monitoring
-- Risk overview
-- Decision visibility
-- Executive dashboard feed
+- Executive signal aggregation
+- KPI intelligence
+- Risk alerting
+- Business insight generation
+- Executive memory
