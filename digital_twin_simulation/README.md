@@ -1,13 +1,13 @@
-# AEON MATRIX Digital Twin Scenario Simulation Engine
+# AEON MATRIX Enterprise Digital Twin Simulation & Scenario Intelligence Layer v4.0
 
 Purpose:
 
-Simulate possible future states before executing real-world actions.
+Simulate enterprise scenarios before real execution.
 
 Capabilities:
 
-- Scenario generation
+- Scenario modeling
 - What-if analysis
-- Risk simulation
-- Future prediction
-- Executive decision support
+- Impact forecasting
+- Decision comparison
+- Simulation memory

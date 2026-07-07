@@ -1,30 +1,32 @@
-from digital_twin_simulation.scenario.scenario_generator import ScenarioGenerator
-from digital_twin_simulation.engine.simulator import ScenarioSimulator
-from digital_twin_simulation.risk.risk_engine import calculate_risk
-from digital_twin_simulation.prediction.future_prediction import predict
+from digital_twin_simulation.scenario.scenario_engine import create_scenario
+from digital_twin_simulation.forecast.impact_forecast import forecast
+from digital_twin_simulation.compare.decision_compare import compare
+from digital_twin_simulation.engine.simulation_core import run_simulation
+from digital_twin_simulation.memory.simulation_memory import save
 
 
-scenario = ScenarioGenerator().create(
-    "DEMAND_SPIKE_SIMULATION",
-    {
-        "inventory": 500,
-        "demand": 900
-    }
+scenario = create_scenario(
+    "SUPPLY_CHAIN_DELAY",
+    "TRANSPORT_DISRUPTION"
 )
 
-simulation = ScenarioSimulator().run(
+impact = forecast(
     scenario
 )
 
-risk = calculate_risk(
-    simulation
+decision = compare(
+    [
+        "OPTION_A",
+        "OPTION_B"
+    ]
 )
 
-future = predict(
-    risk
+simulation = run_simulation(
+    decision
 )
 
 print(scenario)
+print(impact)
+print(decision)
 print(simulation)
-print(risk)
-print(future)
+print(save(simulation))
