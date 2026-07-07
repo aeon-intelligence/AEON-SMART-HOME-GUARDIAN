@@ -1,15 +1,13 @@
-# AEON MATRIX Decision Intelligence Engine
+# AEON MATRIX Enterprise Decision Intelligence & Autonomous Optimization Layer v10.0
 
 Purpose:
 
-Convert AI signals into explainable business decisions.
+Enable intelligent enterprise decision optimization.
 
-Components:
+Capabilities:
 
-- Recommendation Engine
-- Decision Journal
-- Outcome Learning
-
-Flow:
-
-Signal -> Analysis -> Decision -> Outcome -> Learning
+- Decision context analysis
+- Option evaluation
+- Optimization engine
+- Autonomous recommendations
+- Decision learning memory

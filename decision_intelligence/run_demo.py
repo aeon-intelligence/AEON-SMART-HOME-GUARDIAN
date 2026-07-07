@@ -1,30 +1,32 @@
-from decision_intelligence.engine.recommendation import RecommendationEngine
-from decision_intelligence.journal.decision_journal import create_decision_record
-from decision_intelligence.outcomes.outcome_tracker import track_outcome
+from decision_intelligence.context.context_engine import analyze
+from decision_intelligence.evaluation.option_evaluator import evaluate
+from decision_intelligence.optimization.optimizer import optimize
+from decision_intelligence.recommendation.recommendation_engine import recommend
+from decision_intelligence.memory.decision_memory import save
 
 
-signal = {
-    "event": "INVENTORY_RISK_SIGNAL",
-    "risk_score": 91,
-    "inventory_risk": 91,
-    "market_pressure": 72
-}
-
-
-engine = RecommendationEngine()
-
-decision = engine.analyze(signal)
-
-journal = create_decision_record(
-    signal,
-    decision
+context = analyze(
+    "SUPPLY_CHAIN_OPTIMIZATION"
 )
 
-learning = track_outcome(
-    decision["recommended_action"],
-    "PENDING_VALIDATION"
+evaluation = evaluate(
+    [
+        "OPTION_A",
+        "OPTION_B",
+        "OPTION_C"
+    ]
 )
 
+optimization = optimize(
+    evaluation
+)
 
-print(journal)
-print(learning)
+recommendation = recommend(
+    optimization
+)
+
+print(context)
+print(evaluation)
+print(optimization)
+print(recommendation)
+print(save(recommendation))
