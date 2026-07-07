@@ -1,0 +1,10 @@
+{
+  "event_type": "EXECUTIVE_COMMAND_SIGNAL",
+  "department": "",
+  "risk_score": 0,
+  "performance_score": 0,
+  "opportunity_score": 0,
+  "enterprise_health_score": 0,
+  "status": "",
+  "timestamp": ""
+}
