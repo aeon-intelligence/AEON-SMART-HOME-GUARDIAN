@@ -1,29 +1,29 @@
-from human_ai_collaboration.context.collaboration_context import create
-from human_ai_collaboration.assistant.ai_assistant import assist
-from human_ai_collaboration.feedback.human_feedback import record
-from human_ai_collaboration.governance.collaboration_guard import check
-from human_ai_collaboration.memory.collaboration_memory import save
+from human_ai_collaboration.workforce.workforce_engine import analyze
+from human_ai_collaboration.skill.skill_mapper import map_skill
+from human_ai_collaboration.assignment.task_assignment import assign
+from human_ai_collaboration.monitor.collaboration_monitor import monitor
+from human_ai_collaboration.memory.workforce_memory import save
 
 
-context = create(
-    "EXECUTIVE_USER",
-    "INVENTORY_DECISION"
+team = analyze(
+    "WAREHOUSE_OPERATION_TEAM"
 )
 
-assistant = assist(
-    context
+skill = map_skill(
+    "OPERATION_MANAGER"
 )
 
-feedback = record(
-    "APPROVED_BY_HUMAN"
+assignment = assign(
+    "INVENTORY_DECISION_REVIEW",
+    "HUMAN_SUPERVISOR"
 )
 
-governance = check(
-    "AI_RECOMMENDATION"
+collaboration = monitor(
+    assignment
 )
 
-print(context)
-print(assistant)
-print(feedback)
-print(governance)
-print(save(governance))
+print(team)
+print(skill)
+print(assignment)
+print(collaboration)
+print(save(collaboration))

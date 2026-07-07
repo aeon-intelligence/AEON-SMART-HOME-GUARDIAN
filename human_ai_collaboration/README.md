@@ -1,13 +1,13 @@
-# AEON MATRIX Enterprise Human-AI Collaboration Intelligence Layer v7.0
+# AEON MATRIX Enterprise Human-AI Collaboration & Workforce Intelligence Layer v23.0
 
 Purpose:
 
-Enable effective collaboration between humans and AI agents.
+Enable intelligent collaboration between humans and AI.
 
 Capabilities:
 
-- Human context management
-- AI assistance
-- Feedback learning
-- Governance control
-- Collaboration memory
+- Workforce intelligence
+- Skill mapping
+- Human AI task assignment
+- Collaboration monitoring
+- Workforce learning memory
