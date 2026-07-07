@@ -1,0 +1,10 @@
+{
+  "event_type": "AI_DECISION_GOVERNANCE",
+  "decision_id": "",
+  "policy_status": "",
+  "risk_score": 0,
+  "approval_required": true,
+  "approved_by": "",
+  "action": "",
+  "timestamp": ""
+}
