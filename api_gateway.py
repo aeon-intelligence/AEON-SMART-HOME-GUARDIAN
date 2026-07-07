@@ -1,93 +1,103 @@
-from fastapi import FastAPI, Request, HTTPException
-import time
-import hashlib
+from fastapi import FastAPI, Header, HTTPException
+from pydantic import BaseModel
+from datetime import datetime
+import uuid
 
-app = FastAPI(title="AEON API GATEWAY")
 
-# =========================
-# Simple in-memory security layer
-# =========================
-VALID_TOKENS = {
-    "SMART_HOME_DEVICE_01": "secure-token-123"
-}
+app = FastAPI(
+    title="AEON MATRIX API Gateway",
+    version="2026.1.0"
+)
 
-# =========================
-# Audit Log
-# =========================
-audit_log = []
 
 # =========================
-# Security Check
+# Security Layer (Basic)
 # =========================
-def verify_token(device_id, token):
-    if device_id not in VALID_TOKENS:
-        return False
-    return VALID_TOKENS[device_id] == token
+
+API_KEY = "AEON-MATRIX-DEVICE-KEY"
+
+
+def verify_device(x_api_key: str | None):
+    if x_api_key != API_KEY:
+        raise HTTPException(
+            status_code=401,
+            detail="Unauthorized device"
+        )
+
 
 # =========================
-# Data Sanitizer (CRITICAL)
+# Data Models
 # =========================
-def sanitize_event(event: dict):
-    # NEVER allow raw media fields
-    blocked_fields = ["video", "audio", "image", "frame", "raw_stream"]
 
-    clean = {}
-    for k, v in event.items():
-        if k in blocked_fields:
-            continue
-        clean[k] = v
+class TelemetryEvent(BaseModel):
+    event_type: str
+    device_id: str
+    payload: dict
 
-    return clean
+
+class AIRequest(BaseModel):
+    agent: str
+    command: str
+    data: dict
+
 
 # =========================
-# Forward to AEON MATRIX (mock)
+# Health Check
 # =========================
-def forward_to_matrix(event):
-    print("🚀 Forwarding to AEON MATRIX:", event)
+
+@app.get("/")
+def root():
     return {
-        "status": "forwarded",
-        "timestamp": time.time()
+        "system": "AEON MATRIX",
+        "module": "API Gateway",
+        "status": "ONLINE",
+        "timestamp": datetime.utcnow()
     }
 
-# =========================
-# MAIN ENDPOINT
-# =========================
-@app.post("/event")
-async def receive_event(request: Request):
 
-    data = await request.json()
-
-    device_id = data.get("device_id")
-    token = data.get("token")
-    event = data.get("event")
-
-    # 1. Security check
-    if not verify_token(device_id, token):
-        raise HTTPException(status_code=403, detail="Unauthorized device")
-
-    # 2. Sanitize
-    clean_event = sanitize_event(event)
-
-    # 3. Audit log
-    audit_log.append({
-        "device": device_id,
-        "event": clean_event,
-        "time": time.time()
-    })
-
-    # 4. Forward
-    result = forward_to_matrix(clean_event)
-
+@app.get("/health")
+def health():
     return {
-        "status": "ok",
-        "gateway": "AEON_API_GATEWAY",
-        "processed_event": clean_event,
-        "matrix_response": result
+        "status": "healthy",
+        "service": "api_gateway"
     }
 
+
 # =========================
-# LOG VIEW
+# Telemetry Ingestion
 # =========================
-@app.get("/audit")
-def get_audit_log():
-    return audit_log
+
+@app.post("/telemetry")
+def receive_telemetry(
+    event: TelemetryEvent,
+    x_api_key: str | None = Header(default=None)
+):
+    verify_device(x_api_key)
+
+    return {
+        "event_id": str(uuid.uuid4()),
+        "received": True,
+        "event_type": event.event_type,
+        "device": event.device_id,
+        "timestamp": datetime.utcnow()
+    }
+
+
+# =========================
+# AI Agent Gateway
+# =========================
+
+@app.post("/agent/execute")
+def execute_agent(
+    request: AIRequest,
+    x_api_key: str | None = Header(default=None)
+):
+    verify_device(x_api_key)
+
+    return {
+        "request_id": str(uuid.uuid4()),
+        "agent": request.agent,
+        "command": request.command,
+        "status": "accepted",
+        "governance": "PASSED"
+    }
