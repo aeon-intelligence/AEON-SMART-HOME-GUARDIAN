@@ -1,10 +1,12 @@
 from datetime import datetime
 
 
-def record(event):
+def save(record):
 
     return {
-        "audit_event": event,
+        "memory_type":
+            "AI_GOVERNANCE_MEMORY",
+        "record": record,
         "timestamp":
             datetime.utcnow().isoformat()
     }

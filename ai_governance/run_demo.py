@@ -1,36 +1,28 @@
-from ai_governance.constitution.constitution_core import AIConstitution
-from ai_governance.policy.policy_engine import evaluate_policy
-from ai_governance.audit.audit_logger import AuditLogger
-from ai_governance.override.human_override import request_override
-from ai_governance.compliance.compliance_monitor import check_compliance
+from ai_governance.policy.policy_engine import evaluate
+from ai_governance.risk.risk_engine import assess
+from ai_governance.compliance.compliance_validator import validate
+from ai_governance.audit.audit_logger import record
+from ai_governance.memory.governance_memory import save
 
 
-request = {
-    "action": "INVENTORY_OPTIMIZATION",
-    "risk_score": 91
-}
-
-
-print(
-    AIConstitution().validate(
-        request["action"]
-    )
+policy = evaluate(
+    "AUTONOMOUS_DECISION"
 )
 
-print(
-    evaluate_policy(request)
+risk = assess(
+    policy
 )
 
-print(
-    AuditLogger().record(request)
+compliance = validate(
+    risk
 )
 
-print(
-    request_override(
-        "High risk decision"
-    )
+audit = record(
+    compliance
 )
 
-print(
-    check_compliance()
-)
+print(policy)
+print(risk)
+print(compliance)
+print(audit)
+print(save(audit))

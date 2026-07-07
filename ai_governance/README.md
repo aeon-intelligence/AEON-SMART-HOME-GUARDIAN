@@ -1,13 +1,13 @@
-# AEON MATRIX AI Governance Constitution Layer v2.0
+# AEON MATRIX Enterprise Autonomous AI Governance & Policy Intelligence Layer v43.0
 
 Purpose:
 
-Provide enterprise governance controls for AI operations.
+Ensure trusted autonomous AI operations.
 
 Capabilities:
 
-- AI constitution rules
-- Policy enforcement
-- Audit trail
-- Human override
-- Compliance monitoring
+- AI policy management
+- Risk intelligence
+- Compliance validation
+- Audit tracking
+- Governance memory
