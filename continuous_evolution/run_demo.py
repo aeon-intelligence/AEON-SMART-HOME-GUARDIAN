@@ -1,28 +1,28 @@
-from continuous_evolution.feedback.performance_feedback import analyze
-from continuous_evolution.improvement.improvement_engine import discover
-from continuous_evolution.cycle.evolution_cycle import run
-from continuous_evolution.optimization.learning_optimizer import optimize
+from continuous_evolution.evaluation.performance_evaluator import evaluate
+from continuous_evolution.learning.feedback_loop import learn
+from continuous_evolution.improvement.improvement_planner import plan
+from continuous_evolution.controller.evolution_controller import execute
 from continuous_evolution.memory.evolution_memory import save
 
 
-feedback = analyze(
-    "AEON_MATRIX_OPERATION"
+evaluation = evaluate(
+    "INVENTORY_DECISION_RESULT"
 )
 
-improvement = discover(
-    feedback
+learning = learn(
+    evaluation
 )
 
-cycle = run(
+improvement = plan(
+    learning
+)
+
+evolution = execute(
     improvement
 )
 
-optimization = optimize(
-    cycle
-)
-
-print(feedback)
+print(evaluation)
+print(learning)
 print(improvement)
-print(cycle)
-print(optimization)
-print(save(optimization))
+print(evolution)
+print(save(evolution))
