@@ -1,0 +1,10 @@
+{
+  "event_type": "MOTHER_BRAIN_DECISION_SIGNAL",
+  "source": "",
+  "risk": 0,
+  "opportunity": 0,
+  "impact": 0,
+  "priority_score": 0,
+  "decision": "",
+  "timestamp": ""
+}
