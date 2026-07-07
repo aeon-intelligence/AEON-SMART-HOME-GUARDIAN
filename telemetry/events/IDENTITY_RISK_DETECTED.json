@@ -1,0 +1,9 @@
+{
+  "event_type": "IDENTITY_RISK_DETECTED",
+  "identity_id": "",
+  "risk_score": 0,
+  "access_type": "",
+  "anomaly_type": "",
+  "policy_status": "",
+  "timestamp": ""
+}
