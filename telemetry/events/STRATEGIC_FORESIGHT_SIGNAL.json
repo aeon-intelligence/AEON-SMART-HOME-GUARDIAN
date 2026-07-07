@@ -1,0 +1,10 @@
+{
+  "event_type": "STRATEGIC_FORESIGHT_SIGNAL",
+  "technology_signal": 0,
+  "market_signal": 0,
+  "supply_chain_risk": 0,
+  "consumer_change": 0,
+  "foresight_score": 0,
+  "recommendation": "",
+  "timestamp": ""
+}
