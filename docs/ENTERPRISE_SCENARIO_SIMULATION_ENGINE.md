@@ -1,37 +1,31 @@
 # AEON MATRIX Enterprise Scenario Simulation Engine
 
-## Mission
+## Objective
 
-Enable predictive decision making by simulating
-possible enterprise scenarios before execution.
+Enable future scenario analysis before
+enterprise execution.
 
-## Scenario Types
+## Simulation Flow
 
-- Demand Spike
-- Supply Disruption
-- Inventory Crisis
-- Cyber Incident
-- Cost Optimization
+Current State
+ |
+Scenario Modeling
+ |
+Impact Simulation
+ |
+Risk Analysis
+ |
+Decision Recommendation
 
-## Capabilities
+## Integration
 
-- What-if simulation
-- Impact analysis
-- Risk prediction
-- Decision recommendation
+- Digital Twin
+- Digital Consciousness Layer
+- Collective Intelligence Engine
+- Mother Brain
 
-## Data Flow
+## Governance
 
-Digital Twin
-      |
-      v
-Scenario Engine
-      |
-      v
-Impact Analysis
-      |
-      v
-Mother Brain
-      |
-      v
-Decision
+Simulation output is advisory.
+Critical execution requires
+Guardian validation and audit trail.

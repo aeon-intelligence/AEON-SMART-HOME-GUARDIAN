@@ -1,0 +1,10 @@
+{
+  "event_type": "SCENARIO_SIMULATION_SIGNAL",
+  "scenario_id": "",
+  "demand_change": 0,
+  "supply_stability": 0,
+  "financial_impact": 0,
+  "impact_score": 0,
+  "recommendation": "",
+  "timestamp": ""
+}
