@@ -3,31 +3,17 @@ from pydantic import BaseModel
 from datetime import datetime
 import uuid
 
+from security.jwt_manager import verify_access_token
+from security.permission_registry import check_permission
+from security.policy_engine import evaluate_policy
+from security.audit_logger import write_audit
+
 
 app = FastAPI(
     title="AEON MATRIX API Gateway",
     version="2026.1.0"
 )
 
-
-# =========================
-# Security Layer (Basic)
-# =========================
-
-API_KEY = "AEON-MATRIX-DEVICE-KEY"
-
-
-def verify_device(x_api_key: str | None):
-    if x_api_key != API_KEY:
-        raise HTTPException(
-            status_code=401,
-            detail="Unauthorized device"
-        )
-
-
-# =========================
-# Data Models
-# =========================
 
 class TelemetryEvent(BaseModel):
     event_type: str
@@ -41,9 +27,29 @@ class AIRequest(BaseModel):
     data: dict
 
 
-# =========================
-# Health Check
-# =========================
+def verify_jwt(authorization: str | None):
+
+    if not authorization:
+        raise HTTPException(
+            status_code=401,
+            detail="Missing JWT token"
+        )
+
+    token = authorization.replace(
+        "Bearer ",
+        ""
+    )
+
+    result = verify_access_token(token)
+
+    if not result["valid"]:
+        raise HTTPException(
+            status_code=401,
+            detail=result["reason"]
+        )
+
+    return result["payload"]
+
 
 @app.get("/")
 def root():
@@ -63,41 +69,70 @@ def health():
     }
 
 
-# =========================
-# Telemetry Ingestion
-# =========================
-
 @app.post("/telemetry")
 def receive_telemetry(
     event: TelemetryEvent,
-    x_api_key: str | None = Header(default=None)
+    authorization: str | None = Header(default=None)
 ):
-    verify_device(x_api_key)
+
+    user = verify_jwt(authorization)
+
+    write_audit(
+        user["sub"],
+        "telemetry_upload",
+        "ACCEPTED",
+        "LOW"
+    )
 
     return {
         "event_id": str(uuid.uuid4()),
         "received": True,
-        "event_type": event.event_type,
-        "device": event.device_id,
-        "timestamp": datetime.utcnow()
+        "device": event.device_id
     }
 
-
-# =========================
-# AI Agent Gateway
-# =========================
 
 @app.post("/agent/execute")
 def execute_agent(
     request: AIRequest,
-    x_api_key: str | None = Header(default=None)
+    authorization: str | None = Header(default=None)
 ):
-    verify_device(x_api_key)
+
+    user = verify_jwt(authorization)
+
+    allowed = check_permission(
+        request.agent,
+        request.command
+    )
+
+    if not allowed:
+        write_audit(
+            user["sub"],
+            request.command,
+            "BLOCKED",
+            "HIGH"
+        )
+
+        raise HTTPException(
+            status_code=403,
+            detail="Permission denied"
+        )
+
+
+    policy = evaluate_policy(request.command)
+
+
+    write_audit(
+        user["sub"],
+        request.command,
+        "ACCEPTED",
+        policy.get("risk_level","LOW")
+    )
+
 
     return {
         "request_id": str(uuid.uuid4()),
         "agent": request.agent,
         "command": request.command,
         "status": "accepted",
-        "governance": "PASSED"
+        "governance": policy
     }
