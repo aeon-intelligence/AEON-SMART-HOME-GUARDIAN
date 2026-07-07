@@ -1,0 +1,10 @@
+{
+  "event_type": "COGNITIVE_SIGNAL_RECEIVED",
+  "signal_id": "",
+  "source_agent": "",
+  "domain": "",
+  "priority": "",
+  "confidence_score": 0,
+  "payload": {},
+  "timestamp": ""
+}
