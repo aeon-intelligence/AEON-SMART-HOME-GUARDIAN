@@ -1,0 +1,9 @@
+{
+  "event_type": "IOC_DETECTED",
+  "ioc_type": "",
+  "value": "",
+  "source": "Cyber Intelligence Agent",
+  "risk_score": 0,
+  "related_incident": "",
+  "timestamp": ""
+}
