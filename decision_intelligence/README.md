@@ -1,13 +1,13 @@
-# AEON MATRIX Enterprise Autonomous Decision Intelligence & Strategic Planning Layer v48.0
+# AEON MATRIX Enterprise Decision Intelligence Layer v60.0
 
 Purpose:
 
-Enable intelligent enterprise decision making.
+Transform operational context into evaluated decisions.
 
 Capabilities:
 
-- Decision analysis
-- Scenario evaluation
+- Decision engine
 - Risk scoring
-- Strategic recommendation
+- Value scoring
+- Confidence evaluation
 - Decision memory

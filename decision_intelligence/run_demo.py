@@ -1,31 +1,55 @@
-from decision_intelligence.analyzer.decision_analyzer import analyze
-from decision_intelligence.scenario.scenario_evaluator import evaluate
-from decision_intelligence.risk.risk_scoring import score
-from decision_intelligence.recommendation.strategic_recommendation import recommend
+from decision_intelligence.engine.decision_engine import create
+from decision_intelligence.scoring.confidence_score import calculate as confidence
+from decision_intelligence.risk.risk_score import calculate as risk
+from decision_intelligence.value.value_score import calculate as value
+from decision_intelligence.record.decision_record import create as record
 from decision_intelligence.memory.decision_memory import save
 
 
-analysis = analyze(
-    "ENTERPRISE_GROWTH_STRATEGY"
+context = {
+    "operation": "INVENTORY_OPTIMIZATION",
+    "warehouse": "AEON_DC"
+}
+
+
+decision = create(
+    context
 )
 
-scenario = evaluate(
-    "EXPANSION_SCENARIO"
+
+confidence_result = confidence(
+    decision
 )
 
-risk = score(
-    [
-        analysis,
-        scenario
-    ]
+
+risk_result = risk(
+    decision
 )
 
-decision = recommend(
-    risk
+
+value_result = value(
+    decision
 )
 
-print(analysis)
-print(scenario)
-print(risk)
+
+executive_record = record(
+    {
+        "decision": decision,
+        "confidence": confidence_result,
+        "risk": risk_result,
+        "value": value_result
+    }
+)
+
+
+memory = save(
+    executive_record
+)
+
+
 print(decision)
-print(save(decision))
+print(confidence_result)
+print(risk_result)
+print(value_result)
+print(executive_record)
+print(memory)
