@@ -1,0 +1,16 @@
+system:
+  name: AEON MATRIX
+  version: 1.0.0-AEON-MATRIX
+
+environment:
+  mode: production
+
+services:
+  api_gateway:
+    enabled: true
+
+  guardian_agent:
+    enabled: true
+
+  telemetry:
+    enabled: true
