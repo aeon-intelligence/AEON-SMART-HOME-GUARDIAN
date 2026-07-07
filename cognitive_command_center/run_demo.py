@@ -1,28 +1,36 @@
-from cognitive_command_center.context.context_engine import analyze
-from cognitive_command_center.insight.insight_generator import generate
-from cognitive_command_center.decision.decision_engine import recommend
-from cognitive_command_center.dashboard.command_dashboard import display
-from cognitive_command_center.memory.cognitive_memory import save
+from cognitive_command_center.dashboard.executive_dashboard import generate
+from cognitive_command_center.signal.signal_aggregator import aggregate
+from cognitive_command_center.kpi.kpi_engine import analyze
+from cognitive_command_center.decision.decision_feed import generate as decision
+from cognitive_command_center.memory.command_memory import save
 
 
-context = analyze(
-    "ENTERPRISE_REALTIME_OPERATION"
+dashboard = generate(
+    "ALL_SYSTEMS_OPERATIONAL"
 )
 
-insight = generate(
-    context
+signals = aggregate(
+    [
+        "INVENTORY_SIGNAL",
+        "MARKET_SIGNAL",
+        "RISK_SIGNAL"
+    ]
 )
 
-decision = recommend(
-    insight
+kpi = analyze(
+    [
+        "OTIF",
+        "COST",
+        "PRODUCTIVITY"
+    ]
 )
 
-dashboard = display(
-    decision
+recommendation = decision(
+    kpi
 )
 
-print(context)
-print(insight)
-print(decision)
 print(dashboard)
-print(save(dashboard))
+print(signals)
+print(kpi)
+print(recommendation)
+print(save(recommendation))

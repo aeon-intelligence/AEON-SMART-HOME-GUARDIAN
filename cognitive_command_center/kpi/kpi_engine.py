@@ -1,7 +1,7 @@
-def analyze_kpi(metrics):
+def analyze(metrics):
 
     return {
         "metrics": metrics,
-        "health_score": 94,
-        "status": "OPTIMAL"
+        "health_score": 95,
+        "trend": "POSITIVE"
     }
