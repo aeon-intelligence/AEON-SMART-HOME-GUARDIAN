@@ -1,0 +1,9 @@
+{
+  "event_type": "OUTCOME_LEARNING_SIGNAL",
+  "decision_id": "",
+  "expected_result": 0,
+  "actual_result": 0,
+  "accuracy_score": 0,
+  "learning_status": "",
+  "timestamp": ""
+}
