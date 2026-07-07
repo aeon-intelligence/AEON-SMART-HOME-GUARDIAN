@@ -1,0 +1,9 @@
+{
+  "event_type": "WAREHOUSE_STATE_UPDATED",
+  "warehouse_id": "",
+  "inventory_state": {},
+  "worker_state": {},
+  "order_flow": {},
+  "equipment_state": {},
+  "timestamp": ""
+}
