@@ -1,0 +1,8 @@
+{
+  "event_type": "KNOWLEDGE_GRAPH_UPDATED",
+  "entity_id": "",
+  "relationship_type": "",
+  "source_event": "",
+  "confidence_score": 0,
+  "timestamp": ""
+}
