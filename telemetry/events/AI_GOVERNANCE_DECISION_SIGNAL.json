@@ -1,0 +1,9 @@
+{
+  "event_type": "AI_GOVERNANCE_DECISION_SIGNAL",
+  "decision_id": "",
+  "risk_score": 0,
+  "confidence": 0,
+  "governance_action": "",
+  "human_override_required": false,
+  "timestamp": ""
+}
