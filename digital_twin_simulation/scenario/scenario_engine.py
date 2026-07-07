@@ -1,7 +1,6 @@
-def create_scenario(name, condition):
+def simulate(condition):
 
     return {
-        "scenario": name,
-        "condition": condition,
-        "status": "CREATED"
+        "scenario": condition,
+        "simulation_status": "COMPLETED"
     }

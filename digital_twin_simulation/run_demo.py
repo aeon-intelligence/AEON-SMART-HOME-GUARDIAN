@@ -1,32 +1,28 @@
-from digital_twin_simulation.scenario.scenario_engine import create_scenario
-from digital_twin_simulation.forecast.impact_forecast import forecast
-from digital_twin_simulation.compare.decision_compare import compare
-from digital_twin_simulation.engine.simulation_core import run_simulation
+from digital_twin_simulation.model.twin_model import create
+from digital_twin_simulation.scenario.scenario_engine import simulate
+from digital_twin_simulation.impact.impact_analyzer import analyze
+from digital_twin_simulation.prediction.future_predictor import predict
 from digital_twin_simulation.memory.simulation_memory import save
 
 
-scenario = create_scenario(
-    "SUPPLY_CHAIN_DELAY",
-    "TRANSPORT_DISRUPTION"
+twin = create(
+    "AEON_WAREHOUSE_OPERATION"
 )
 
-impact = forecast(
+scenario = simulate(
+    "DEMAND_INCREASE_30_PERCENT"
+)
+
+impact = analyze(
     scenario
 )
 
-decision = compare(
-    [
-        "OPTION_A",
-        "OPTION_B"
-    ]
+prediction = predict(
+    impact
 )
 
-simulation = run_simulation(
-    decision
-)
-
+print(twin)
 print(scenario)
 print(impact)
-print(decision)
-print(simulation)
-print(save(simulation))
+print(prediction)
+print(save(prediction))
