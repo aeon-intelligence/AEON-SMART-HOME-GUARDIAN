@@ -1,0 +1,9 @@
+{
+  "event_type": "KNOWLEDGE_GRAPH_UPDATED",
+  "graph_id": "",
+  "nodes_added": 0,
+  "relations_added": 0,
+  "related_incidents": [],
+  "confidence": 0,
+  "timestamp": ""
+}
