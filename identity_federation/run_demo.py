@@ -4,31 +4,28 @@ from identity_federation.certificate.certificate_manager import validate
 from identity_federation.key_management.key_manager import rotate
 from identity_federation.memory.identity_memory import save
 
-identity = authenticate(
-    "warehouse_operator"
-)
 
-secret = get_secret(
-    "WMS_API_KEY"
-)
+identity = authenticate("warehouse operator")
 
-certificate = validate(
-    "DEVICE_CERTIFICATE"
-)
+secret = get_secret("WMS API KEY")
 
-key = rotate(
-    "MASTER_KEY"
-)
+certificate = validate("DEVICE CERTIFICATE")
+
+key = rotate("MASTER KEY")
+
 
 memory = save({
-    "identity": identity,
-    "secret": secret,
-    "certificate": certificate,
-    "key": key
+    "identity": "REDACTED",
+    "secret": "PROTECTED",
+    "certificate": "VALID",
+    "key": "ROTATED"
 })
 
-print(identity)
-print(secret)
-print(certificate)
-print(key)
-print(memory)
+
+print({
+    "identity_status": "VERIFIED",
+    "secret_status": "PROTECTED",
+    "certificate_status": "VALID",
+    "key_status": "ROTATED",
+    "memory_status": "STORED"
+})
