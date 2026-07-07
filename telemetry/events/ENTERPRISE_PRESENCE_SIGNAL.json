@@ -1,0 +1,9 @@
+{
+  "event_type": "ENTERPRISE_PRESENCE_SIGNAL",
+  "entity_id": "",
+  "entity_type": "",
+  "health_score": 0,
+  "availability_status": "",
+  "readiness_score": 0,
+  "timestamp": ""
+}
