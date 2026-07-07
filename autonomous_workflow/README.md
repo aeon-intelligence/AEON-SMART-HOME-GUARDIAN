@@ -1,13 +1,13 @@
-# AEON MATRIX Autonomous Workflow Orchestration Engine
+# AEON MATRIX Enterprise Autonomous Workflow Orchestration & Agent Collaboration Layer v2.0
 
 Purpose:
 
-Convert intelligent decisions into controlled enterprise workflows.
+Coordinate multiple AI agents and autonomous workflows.
 
 Capabilities:
 
-- Workflow planning
-- Task orchestration
-- Human approval routing
-- Execution queue
-- Governance-aware automation
+- Workflow orchestration
+- Agent collaboration
+- Priority scheduling
+- Agent communication
+- Workflow memory

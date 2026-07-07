@@ -1,33 +1,38 @@
-from autonomous_workflow.planner.workflow_planner import WorkflowPlanner
-from autonomous_workflow.orchestrator.task_orchestrator import TaskOrchestrator
-from autonomous_workflow.approval.approval_router import route_approval
-from autonomous_workflow.queue.action_queue import ActionQueue
+from autonomous_workflow.agents.agent_registry import register_agent
+from autonomous_workflow.orchestrator.workflow_engine import create_workflow
+from autonomous_workflow.priority.priority_engine import assign_priority
+from autonomous_workflow.bus.agent_bus import send_message
+from autonomous_workflow.memory.workflow_memory import save
 
 
-decision = {
-    "action": "OPTIMIZE_INVENTORY",
-    "risk_score": 91
-}
-
-
-workflow = WorkflowPlanner().create_plan(
-    decision
+forecast_agent = register_agent(
+    "Forecast_Agent",
+    "Demand Prediction"
 )
 
-tasks = TaskOrchestrator().execute(
-    workflow
+logistics_agent = register_agent(
+    "Logistics_Agent",
+    "Route Optimization"
 )
 
-approval = route_approval(
-    decision["risk_score"]
+workflow = create_workflow(
+    "INVENTORY_OPTIMIZATION"
 )
 
-queue = ActionQueue()
+priority = assign_priority(
+    workflow["workflow"],
+    "HIGH"
+)
 
-for task in tasks:
-    queue.add(task)
+message = send_message(
+    forecast_agent["agent"],
+    logistics_agent["agent"],
+    "Demand forecast ready"
+)
 
-
+print(forecast_agent)
+print(logistics_agent)
 print(workflow)
-print(approval)
-print(queue.queue)
+print(priority)
+print(message)
+print(save(workflow))
