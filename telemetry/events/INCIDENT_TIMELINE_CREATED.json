@@ -1,0 +1,10 @@
+{
+  "event_type": "INCIDENT_TIMELINE_CREATED",
+  "incident_id": "",
+  "severity": "",
+  "events_count": 0,
+  "start_time": "",
+  "end_time": "",
+  "risk_score": 0,
+  "status": "OPEN"
+}
