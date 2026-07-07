@@ -1,0 +1,10 @@
+{
+  "event_type": "RESILIENCE_RISK_DETECTED",
+  "incident_id": "",
+  "domain": "",
+  "risk_score": 0,
+  "failure_probability": 0,
+  "recovery_plan": "",
+  "resilience_score": 0,
+  "timestamp": ""
+}
