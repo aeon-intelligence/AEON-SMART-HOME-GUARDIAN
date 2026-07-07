@@ -1,39 +1,31 @@
-from knowledge_graph.entities.entity_store import EntityStore
-from knowledge_graph.relations.relation_store import RelationStore
-from knowledge_graph.context.context_engine import build_context
-from knowledge_graph.reasoning.reasoning_engine import ReasoningEngine
+from knowledge_graph.entity.entity_registry import register
+from knowledge_graph.relationship.relation_engine import connect
+from knowledge_graph.event.event_builder import create
+from knowledge_graph.query.intelligence_query import search
+from knowledge_graph.memory.knowledge_memory import save
 
 
-entities = EntityStore()
-
-stock = entities.add(
-    "Inventory",
-    "Operational Asset"
+entity = register(
+    "WAREHOUSE_SYSTEM",
+    "OPERATION_PLATFORM"
 )
 
-demand = entities.add(
-    "Demand Forecast",
-    "Prediction System"
+relation = connect(
+    "WAREHOUSE_SYSTEM",
+    "INVENTORY_DATA",
+    "PRODUCES_SIGNAL"
 )
 
-
-relation = RelationStore().connect(
-    stock["name"],
-    "CAUSES",
-    demand["name"]
+event = create(
+    "STOCK_RISK_DETECTED"
 )
 
-
-context = build_context(
-    stock,
-    relation
+query = search(
+    "WHY_INVENTORY_RISK_OCCURRED"
 )
 
-
-print(
-    ReasoningEngine().analyze(
-        relation
-    )
-)
-
-print(context)
+print(entity)
+print(relation)
+print(event)
+print(query)
+print(save(query))

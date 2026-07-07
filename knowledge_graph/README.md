@@ -1,12 +1,13 @@
-# AEON MATRIX Enterprise Knowledge Graph v2.0
+# AEON MATRIX Enterprise Knowledge Graph & Organizational Intelligence Layer v25.0
 
 Purpose:
 
-Transform enterprise knowledge into connected intelligence.
+Build organizational intelligence through connected knowledge.
 
 Capabilities:
 
-- Entity mapping
-- Relationship discovery
-- Context reasoning
-- Cross-domain intelligence
+- Entity management
+- Relationship mapping
+- Event intelligence
+- Knowledge query
+- Enterprise memory
