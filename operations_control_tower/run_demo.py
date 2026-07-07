@@ -1,29 +1,35 @@
-from operations_control_tower.monitor.state_monitor import monitor_state
-from operations_control_tower.sla.sla_guard import check_sla
-from operations_control_tower.resource.resource_allocator import allocate_resource
-from operations_control_tower.workflow.autonomous_workflow import trigger_workflow
-from operations_control_tower.memory.operation_memory import save
+from operations_control_tower.monitor.operations_monitor import monitor
+from operations_control_tower.resource.resource_controller import allocate
+from operations_control_tower.priority.action_priority import prioritize
+from operations_control_tower.dashboard.control_dashboard import generate
+from operations_control_tower.memory.operations_memory import save
 
 
-state = monitor_state(
-    "AEON LOGISTICS",
-    96
+operation = monitor(
+    "WAREHOUSE_OPERATION"
 )
 
-sla = check_sla(
-    state["health_score"]
+resource = allocate(
+    "LOGISTICS_CAPACITY"
 )
 
-resource = allocate_resource(
-    "HIGH"
+priority = prioritize(
+    [
+        "RESTOCK_CRITICAL_SKU",
+        "OPTIMIZE_ROUTE"
+    ]
 )
 
-workflow = trigger_workflow(
-    sla["sla_status"]
+dashboard = generate(
+    [
+        operation,
+        resource,
+        priority
+    ]
 )
 
-print(state)
-print(sla)
+print(operation)
 print(resource)
-print(workflow)
-print(save(workflow))
+print(priority)
+print(dashboard)
+print(save(dashboard))
