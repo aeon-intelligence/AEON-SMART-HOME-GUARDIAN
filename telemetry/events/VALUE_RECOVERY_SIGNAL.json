@@ -3,7 +3,7 @@
   "sku": "",
   "branch_id": "",
   "expiry_risk": 0,
-  "demand_risk": 0,
+  "waste_probability": 0,
   "quality_score": 0,
   "recommended_action": "",
   "confidence": 0,

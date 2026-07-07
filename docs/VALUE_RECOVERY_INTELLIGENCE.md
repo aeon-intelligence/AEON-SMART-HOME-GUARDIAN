@@ -1,18 +1,18 @@
 # AEON MATRIX Value Recovery Intelligence
 
-## Mission
+## Objective
 
-Convert potential waste into recoverable enterprise value.
+Transform waste risk into recovered enterprise value.
 
 ## Intelligence Pipeline
 
 Shelf Life Intelligence
         |
-Demand Forecast Engine
+Demand Forecast Intelligence
         |
 Waste Prediction Engine
         |
-Recovery Decision Engine
+Value Recovery Decision Engine
         |
 Guardian Brain
         |
@@ -20,4 +20,5 @@ Commander Dashboard
 
 ## Governance
 
-AI recommendations must pass policy validation.
+All AI decisions require validation,
+audit trail and policy enforcement.
