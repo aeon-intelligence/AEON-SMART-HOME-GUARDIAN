@@ -1,0 +1,9 @@
+{
+  "event_type": "THREAT_MEMORY_LEARNING",
+  "memory_id": "",
+  "related_incidents": [],
+  "pattern": "",
+  "confidence": 0,
+  "recommendation": "",
+  "timestamp": ""
+}
