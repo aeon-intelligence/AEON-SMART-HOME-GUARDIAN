@@ -1,0 +1,9 @@
+{
+  "event_type": "GUARDIAN_SECURITY_DECISION",
+  "decision_id": "",
+  "risk_score": 0,
+  "policy_result": "",
+  "action": "",
+  "approval_required": false,
+  "timestamp": ""
+}
