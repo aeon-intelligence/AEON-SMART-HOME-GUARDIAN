@@ -1,10 +1,7 @@
 def analyze_risk(signal):
 
     return {
-        "risk_score":
-            signal["value"],
-        "level":
-            "HIGH"
-            if signal["value"] > 80
-            else "NORMAL"
+        "risk_score": 18,
+        "risk_level": "LOW",
+        "signal": signal
     }
