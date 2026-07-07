@@ -1,0 +1,11 @@
+{
+  "event_type": "INTELLIGENCE_FUSION_EVENT",
+  "internal_signal_count": 0,
+  "world_signal_count": 0,
+  "scenario_count": 0,
+  "agent_insight_count": 0,
+  "fusion_score": 0,
+  "status": "",
+  "mother_brain_sync": false,
+  "timestamp": ""
+}
