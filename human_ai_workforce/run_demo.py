@@ -1,29 +1,32 @@
-from human_ai_workforce.signals.workforce_signal import collect_signal
-from human_ai_workforce.adoption.adoption_engine import calculate_adoption
-from human_ai_workforce.skill.skill_engine import analyze_skill
-from human_ai_workforce.collaboration.collaboration_engine import analyze_collaboration
+from human_ai_workforce.signal.workforce_signal import analyze
+from human_ai_workforce.skill.skill_engine import evaluate
+from human_ai_workforce.agent.ai_collaboration import collaborate
+from human_ai_workforce.optimization.workforce_optimizer import optimize
 from human_ai_workforce.memory.workforce_memory import save
 
 
-signal = collect_signal(
-    "OPERATIONS_TEAM",
-    "AI_ASSISTED_DECISION"
+workforce = analyze(
+    "ENTERPRISE_TEAM_SIGNAL"
 )
 
-adoption = calculate_adoption(
-    92
+skill = evaluate(
+    "DIGITAL_OPERATION_SKILL"
 )
 
-skill = analyze_skill(
-    "AI_WORKFLOW_OPERATION"
+agent = collaborate(
+    "GUARDIAN_AI_AGENT"
 )
 
-collaboration = analyze_collaboration(
-    signal
+optimization = optimize(
+    [
+        workforce,
+        skill,
+        agent
+    ]
 )
 
-print(signal)
-print(adoption)
+print(workforce)
 print(skill)
-print(collaboration)
-print(save(collaboration))
+print(agent)
+print(optimization)
+print(save(optimization))

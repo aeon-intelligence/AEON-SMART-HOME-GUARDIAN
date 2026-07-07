@@ -1,7 +1,7 @@
-def analyze_skill(skill):
+def evaluate(skill):
 
     return {
-        "skill_area": skill,
-        "readiness":
-            "READY"
+        "skill": skill,
+        "skill_status": "IDENTIFIED",
+        "confidence": 93
     }

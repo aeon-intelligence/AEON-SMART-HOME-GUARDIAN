@@ -5,9 +5,8 @@ def save(record):
 
     return {
         "memory_type":
-            "WORKFORCE_INTELLIGENCE",
-        "record":
-            record,
+            "HUMAN_AI_WORKFORCE_MEMORY",
+        "record": record,
         "timestamp":
             datetime.utcnow().isoformat()
     }
