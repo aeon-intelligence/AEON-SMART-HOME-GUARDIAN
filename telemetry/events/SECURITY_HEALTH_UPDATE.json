@@ -1,0 +1,9 @@
+{
+  "event_type": "SECURITY_HEALTH_UPDATE",
+  "overall_score": 0,
+  "active_incidents": 0,
+  "threat_level": "LOW",
+  "services": [],
+  "recommendations": [],
+  "timestamp": ""
+}
