@@ -1,8 +1,6 @@
 from datetime import datetime
 
-
 def save(record):
-
     return {
         "memory_type": "BUSINESS_INTELLIGENCE_MEMORY",
         "record": record,
