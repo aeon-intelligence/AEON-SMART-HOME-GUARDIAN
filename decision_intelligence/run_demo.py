@@ -1,32 +1,31 @@
-from decision_intelligence.context.context_engine import analyze
-from decision_intelligence.evaluation.option_evaluator import evaluate
-from decision_intelligence.optimization.optimizer import optimize
-from decision_intelligence.recommendation.recommendation_engine import recommend
+from decision_intelligence.analyzer.decision_analyzer import analyze
+from decision_intelligence.scenario.scenario_evaluator import evaluate
+from decision_intelligence.risk.risk_scoring import score
+from decision_intelligence.recommendation.strategic_recommendation import recommend
 from decision_intelligence.memory.decision_memory import save
 
 
-context = analyze(
-    "SUPPLY_CHAIN_OPTIMIZATION"
+analysis = analyze(
+    "ENTERPRISE_GROWTH_STRATEGY"
 )
 
-evaluation = evaluate(
+scenario = evaluate(
+    "EXPANSION_SCENARIO"
+)
+
+risk = score(
     [
-        "OPTION_A",
-        "OPTION_B",
-        "OPTION_C"
+        analysis,
+        scenario
     ]
 )
 
-optimization = optimize(
-    evaluation
+decision = recommend(
+    risk
 )
 
-recommendation = recommend(
-    optimization
-)
-
-print(context)
-print(evaluation)
-print(optimization)
-print(recommendation)
-print(save(recommendation))
+print(analysis)
+print(scenario)
+print(risk)
+print(decision)
+print(save(decision))
