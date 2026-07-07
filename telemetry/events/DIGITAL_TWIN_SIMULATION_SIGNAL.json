@@ -1,0 +1,9 @@
+{
+  "event_type": "DIGITAL_TWIN_SIMULATION_SIGNAL",
+  "scenario_id": "",
+  "demand_change": 0,
+  "supply_risk": 0,
+  "simulated_impact": 0,
+  "recommendation": "",
+  "timestamp": ""
+}
