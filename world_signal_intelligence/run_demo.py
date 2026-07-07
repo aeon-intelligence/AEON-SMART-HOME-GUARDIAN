@@ -1,29 +1,29 @@
-from world_signal_intelligence.collector.signal_collector import collect_signal
-from world_signal_intelligence.supply_chain.risk_analyzer import analyze_risk
-from world_signal_intelligence.economy.economic_monitor import monitor_economy
-from world_signal_intelligence.simulation.impact_simulator import simulate
-from world_signal_intelligence.memory.future_memory import save
+from world_signal_intelligence.collector.signal_collector import collect
+from world_signal_intelligence.analysis.trend_analyzer import analyze
+from world_signal_intelligence.risk.future_risk_detector import detect
+from world_signal_intelligence.opportunity.opportunity_engine import identify
+from world_signal_intelligence.memory.signal_memory import save
 
 
-signal = collect_signal(
-    "GLOBAL_MONITOR",
-    "SUPPLY_CHAIN_DISRUPTION"
+signal = collect(
+    "GLOBAL_MARKET",
+    "AI_SUPPLY_CHAIN_TRANSFORMATION"
 )
 
-risk = analyze_risk(
+trend = analyze(
     signal
 )
 
-economy = monitor_economy(
-    "MARKET_PRESSURE"
+risk = detect(
+    trend
 )
 
-impact = simulate(
-    "LOGISTICS_DELAY"
+opportunity = identify(
+    signal
 )
 
 print(signal)
+print(trend)
 print(risk)
-print(economy)
-print(impact)
-print(save(impact))
+print(opportunity)
+print(save(opportunity))

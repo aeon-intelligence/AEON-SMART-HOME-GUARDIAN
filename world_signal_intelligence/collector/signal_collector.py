@@ -1,7 +1,7 @@
-def collect_signal(source, signal):
+def collect(source, signal):
 
     return {
         "source": source,
         "signal": signal,
-        "status": "CAPTURED"
+        "status": "COLLECTED"
     }
