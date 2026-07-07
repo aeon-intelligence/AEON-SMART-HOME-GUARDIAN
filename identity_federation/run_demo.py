@@ -28,7 +28,14 @@ memory = save({
 })
 
 print(identity)
-print(secret)
+print("***REDACTED_SECRET***")
 print(certificate)
-print(key)
-print(memory)
+print("***REDACTED_KEY***")
+print({
+    **memory,
+    "record": {
+        **memory["record"],
+        "secret": "***REDACTED***",
+        "key": "***REDACTED***"
+    }
+})
