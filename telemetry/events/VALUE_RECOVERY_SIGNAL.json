@@ -1,0 +1,10 @@
+{
+  "event_type": "VALUE_RECOVERY_SIGNAL",
+  "sku": "",
+  "branch_id": "",
+  "expiry_risk": 0,
+  "waste_probability": 0,
+  "recommended_action": "",
+  "confidence": 0,
+  "timestamp": ""
+}
