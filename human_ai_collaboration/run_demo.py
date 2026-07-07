@@ -1,29 +1,29 @@
-from human_ai_collaboration.interaction.interaction_monitor import monitor
-from human_ai_collaboration.adoption.adoption_score import calculate_adoption
-from human_ai_collaboration.skill.skill_gap import analyze_skill_gap
-from human_ai_collaboration.learning.learning_recommendation import recommend
+from human_ai_collaboration.context.collaboration_context import create
+from human_ai_collaboration.assistant.ai_assistant import assist
+from human_ai_collaboration.feedback.human_feedback import record
+from human_ai_collaboration.governance.collaboration_guard import check
 from human_ai_collaboration.memory.collaboration_memory import save
 
 
-interaction = monitor(
-    "warehouse_team",
-    "AI_ASSISTED_DECISION"
+context = create(
+    "EXECUTIVE_USER",
+    "INVENTORY_DECISION"
 )
 
-adoption = calculate_adoption(
-    "DAILY_USAGE"
+assistant = assist(
+    context
 )
 
-skill = analyze_skill_gap(
-    "AI_OPERATION"
+feedback = record(
+    "APPROVED_BY_HUMAN"
 )
 
-learning = recommend(
-    skill
+governance = check(
+    "AI_RECOMMENDATION"
 )
 
-print(interaction)
-print(adoption)
-print(skill)
-print(learning)
-print(save(learning))
+print(context)
+print(assistant)
+print(feedback)
+print(governance)
+print(save(governance))
