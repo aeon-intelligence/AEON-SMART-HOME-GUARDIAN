@@ -1,29 +1,28 @@
-from global_intelligence.collector.signal_collector import collect
-from global_intelligence.analysis.world_analyzer import analyze
-from global_intelligence.classification.signal_classifier import classify
-from global_intelligence.preparedness.future_engine import prepare
-from global_intelligence.memory.global_memory import save
+from global_intelligence.collector.global_signal import collect
+from global_intelligence.analyzer.future_analyzer import analyze
+from global_intelligence.impact.impact_engine import evaluate
+from global_intelligence.preparedness.action_engine import recommend
+from global_intelligence.memory.future_memory import save
 
 
 signal = collect(
-    "WORLD_SIGNAL_AGENT",
-    "SUPPLY_CHAIN_DISRUPTION"
+    "GLOBAL_TECHNOLOGY_ECONOMIC_SIGNAL"
 )
 
 analysis = analyze(
     signal
 )
 
-classification = classify(
-    "SUPPLY_CHAIN_RISK"
+impact = evaluate(
+    analysis
 )
 
-prepared = prepare(
-    analysis
+action = recommend(
+    impact
 )
 
 print(signal)
 print(analysis)
-print(classification)
-print(prepared)
-print(save(prepared))
+print(impact)
+print(action)
+print(save(action))
