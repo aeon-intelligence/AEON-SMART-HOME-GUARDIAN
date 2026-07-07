@@ -1,36 +1,28 @@
-from cognitive_command_center.telemetry.signal_fusion import collect_signals
-from cognitive_command_center.kpi.kpi_engine import analyze_kpi
-from cognitive_command_center.risk.risk_engine import analyze_risk
+from cognitive_command_center.context.context_engine import analyze
+from cognitive_command_center.insight.insight_generator import generate
 from cognitive_command_center.decision.decision_engine import recommend
-from cognitive_command_center.alert.alert_engine import generate_alert
-from cognitive_command_center.memory.decision_memory import save
+from cognitive_command_center.dashboard.command_dashboard import display
+from cognitive_command_center.memory.cognitive_memory import save
 
 
-signals = collect_signals(
-    "ENTERPRISE_TELEMETRY",
-    "OPERATION_STATUS"
+context = analyze(
+    "ENTERPRISE_REALTIME_OPERATION"
 )
 
-kpi = analyze_kpi(
-    "OTIF_PRODUCTIVITY_PROFIT"
-)
-
-risk = analyze_risk(
-    signals
+insight = generate(
+    context
 )
 
 decision = recommend(
-    kpi,
-    risk
+    insight
 )
 
-alert = generate_alert(
-    risk["risk_level"]
+dashboard = display(
+    decision
 )
 
-print(signals)
-print(kpi)
-print(risk)
+print(context)
+print(insight)
 print(decision)
-print(alert)
-print(save(decision))
+print(dashboard)
+print(save(dashboard))

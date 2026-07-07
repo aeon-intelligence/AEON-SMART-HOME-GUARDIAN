@@ -1,8 +1,8 @@
-def recommend(kpi, risk):
+def recommend(insight):
 
     return {
-        "recommendation":
-            "CONTINUE_OPERATION",
-        "approval":
-            "EXECUTIVE_REVIEW"
+        "decision":
+            "OPTIMAL_ACTION_RECOMMENDED",
+        "confidence": 94,
+        "insight": insight
     }

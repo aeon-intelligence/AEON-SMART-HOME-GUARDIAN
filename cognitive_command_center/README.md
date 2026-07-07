@@ -1,14 +1,13 @@
-# AEON MATRIX Enterprise Cognitive Command Center & Executive Decision Intelligence Layer v1.0
+# AEON MATRIX Enterprise Cognitive Command Center & Autonomous Executive Intelligence Layer v5.0
 
 Purpose:
 
-Provide real-time executive intelligence and decision support.
+Create a cognitive executive decision environment.
 
 Capabilities:
 
-- Situation awareness
-- KPI fusion
-- Risk analysis
+- Context understanding
+- Executive insights
 - Decision intelligence
-- Executive alerts
-- Decision memory
+- Command dashboard
+- Cognitive memory
