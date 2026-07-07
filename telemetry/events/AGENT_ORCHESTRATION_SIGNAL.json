@@ -1,9 +1,9 @@
 {
   "event_type": "AGENT_ORCHESTRATION_SIGNAL",
-  "agent_id": "",
-  "agent_type": "",
-  "task": "",
+  "task_id": "",
+  "required_capability": "",
+  "assigned_agent": "",
   "status": "",
-  "confidence_score": 0,
+  "guardian_check": true,
   "timestamp": ""
 }
