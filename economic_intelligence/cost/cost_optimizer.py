@@ -1,8 +1,8 @@
-def optimize_cost(resource):
+def optimize(cost):
 
     return {
-        "resource": resource,
+        "current_cost": cost,
         "optimization":
-            "REDUCED_WASTE",
-        "saving_score": 88
+            "EFFICIENCY_IMPROVEMENT",
+        "saving_potential": 18
     }

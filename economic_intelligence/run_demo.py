@@ -28,3 +28,15 @@ print(cost)
 print(revenue)
 print(decision)
 print(save(decision))
+OMOUS_DECISION"
+)
+
+resource = allocate(
+    "AI_AGENT_CAPACITY"
+)
+
+print(signal)
+print(cost)
+print(value)
+print(resource)
+print(save(value))

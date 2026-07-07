@@ -1,13 +1,13 @@
-# AEON MATRIX Enterprise Autonomous Value Creation & Economic Intelligence Layer v1.0
+# AEON MATRIX Enterprise Autonomous Economic Intelligence & Value Optimization Layer v2.0
 
 Purpose:
 
-Connect AI decisions with measurable business value.
+Optimize enterprise decisions based on economic value.
 
 Capabilities:
 
-- Value impact analysis
+- Economic signal analysis
 - Cost optimization
-- Revenue opportunity detection
-- Economic decision support
-- Value memory
+- Value impact analysis
+- Resource allocation
+- Economic learning memory
