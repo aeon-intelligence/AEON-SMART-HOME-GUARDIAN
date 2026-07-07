@@ -1,0 +1,9 @@
+{
+  "event_type": "AGENT_COLLABORATION_SIGNAL",
+  "source_agent": "",
+  "target_agent": "",
+  "message_type": "",
+  "context_key": "",
+  "resolution_status": "",
+  "timestamp": ""
+}
