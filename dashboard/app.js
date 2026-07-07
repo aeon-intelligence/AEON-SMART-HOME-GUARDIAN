@@ -39,3 +39,31 @@ async function loadDashboard() {
 
 
 loadDashboard();
+
+async function loadEvents(){
+
+    try {
+
+        const events = await fetch(
+            "http://localhost:8000/events"
+        ).then(r => r.json());
+
+
+        document.getElementById("event-list").innerHTML =
+        events.length
+        ? JSON.stringify(events, null, 2)
+        : "No events";
+
+
+    } catch(e){
+
+        document.getElementById("event-list").innerHTML =
+        "Event API Offline";
+
+    }
+
+}
+
+
+loadEvents();
+
