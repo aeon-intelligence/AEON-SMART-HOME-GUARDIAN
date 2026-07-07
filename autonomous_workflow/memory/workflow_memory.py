@@ -4,9 +4,7 @@ from datetime import datetime
 def save(record):
 
     return {
-        "memory_type":
-            "WORKFLOW_LEARNING_MEMORY",
+        "memory_type": "WORKFLOW_MEMORY",
         "record": record,
-        "timestamp":
-            datetime.utcnow().isoformat()
+        "timestamp": datetime.utcnow().isoformat()
     }

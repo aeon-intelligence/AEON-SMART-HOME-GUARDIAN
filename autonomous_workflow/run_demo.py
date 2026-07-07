@@ -1,34 +1,44 @@
-from autonomous_workflow.definition.workflow_engine import create
-from autonomous_workflow.routing.task_router import route
-from autonomous_workflow.approval.approval_controller import request
-from autonomous_workflow.optimization.process_optimizer import optimize
+from autonomous_workflow.engine.workflow_engine import WorkflowEngine
+from autonomous_workflow.trigger.event_trigger import evaluate
+from autonomous_workflow.planner.workflow_planner import plan
+from autonomous_workflow.execution.action_executor import execute
 from autonomous_workflow.memory.workflow_memory import save
 
 
-workflow = create(
-    "INVENTORY_REPLENISHMENT",
-    [
-        "CHECK_STOCK",
-        "ANALYZE_DEMAND",
-        "APPROVE_ORDER"
-    ]
+engine = WorkflowEngine()
+
+
+event = evaluate(
+    {
+        "type": "INVENTORY_RISK",
+        "risk_score": 91
+    }
 )
 
-routing = route(
-    "DEMAND_ANALYSIS",
-    "FORECAST_AGENT"
+
+workflow_plan = plan(
+    event
 )
 
-approval = request(
-    "AUTO_PURCHASE_ORDER"
+
+workflow = engine.create(
+    "INVENTORY_RISK",
+    workflow_plan
 )
 
-optimization = optimize(
+
+result = execute(
     workflow
 )
 
+
+memory = save(
+    result
+)
+
+
+print(event)
+print(workflow_plan)
 print(workflow)
-print(routing)
-print(approval)
-print(optimization)
-print(save(optimization))
+print(result)
+print(memory)
