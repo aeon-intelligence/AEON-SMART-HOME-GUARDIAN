@@ -1,0 +1,9 @@
+{
+  "event_type": "THREAT_CORRELATION_RESULT",
+  "correlation_id": "",
+  "related_events": [],
+  "risk_score": 0,
+  "confidence": 0,
+  "recommendation": "",
+  "timestamp": ""
+}
