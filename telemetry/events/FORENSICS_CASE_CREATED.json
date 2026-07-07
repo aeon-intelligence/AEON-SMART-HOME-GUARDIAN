@@ -1,0 +1,9 @@
+{
+  "event_type": "FORENSICS_CASE_CREATED",
+  "case_id": "",
+  "incident_id": "",
+  "evidence_count": 0,
+  "priority": "",
+  "status": "OPEN",
+  "timestamp": ""
+}
