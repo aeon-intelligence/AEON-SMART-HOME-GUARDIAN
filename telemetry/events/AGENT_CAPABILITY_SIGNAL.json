@@ -1,0 +1,9 @@
+{
+  "event_type": "AGENT_CAPABILITY_SIGNAL",
+  "agent_id": "",
+  "capability": "",
+  "health_score": 0,
+  "performance_score": 0,
+  "status": "",
+  "timestamp": ""
+}
