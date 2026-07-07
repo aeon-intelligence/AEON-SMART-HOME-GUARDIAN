@@ -1,0 +1,10 @@
+{
+  "event_type": "SLOTTING_RECOMMENDATION_CREATED",
+  "warehouse_id": "",
+  "sku": "",
+  "current_location": "",
+  "recommended_location": "",
+  "reason": "",
+  "confidence_score": 0,
+  "timestamp": ""
+}
