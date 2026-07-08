@@ -1,0 +1,10 @@
+{
+  "event_type": "PREDICTIVE_INTELLIGENCE_SIGNAL",
+  "demand_pressure": 0,
+  "operational_risk": 0,
+  "market_signal": 0,
+  "prediction_score": 0,
+  "forecast": "",
+  "future_signal_generated": false,
+  "timestamp": ""
+}
