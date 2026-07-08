@@ -7,15 +7,14 @@ Deliverables
 
 - Canonical Data Model
 - Connector SDK
+- Event Mapping Engine
 - Inventory Availability
-- Event Mapping
-- Branch Locator
-- Data Quality
-- Integration Test Harness
+- Branch Locator Foundation
+- Data Quality Framework
 
-Success KPIs
+Target KPIs
 
-Inventory Accuracy >=99.9%
-Event Success >=99.9%
-Sync Latency <2 sec
-Connector Availability >=99.9%
+Inventory Accuracy >= 99.9%
+Connector Availability >= 99.9%
+Event Success Rate >= 99.9%
+Sync Latency < 2 sec
