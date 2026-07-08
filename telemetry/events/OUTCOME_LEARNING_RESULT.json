@@ -1,0 +1,9 @@
+{
+  "event_type": "OUTCOME_LEARNING_RESULT",
+  "decision_id": "",
+  "expected_score": 0,
+  "actual_score": 0,
+  "variance": 0,
+  "learning_status": "",
+  "timestamp": ""
+}
