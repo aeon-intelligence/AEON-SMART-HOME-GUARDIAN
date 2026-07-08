@@ -1,0 +1,10 @@
+{
+  "event_type": "OUTCOME_LEARNING_SIGNAL",
+  "workflow_id": "",
+  "expected_result": 0,
+  "actual_result": 0,
+  "variance": 0,
+  "learning_state": "",
+  "feedback_generated": false,
+  "timestamp": ""
+}
