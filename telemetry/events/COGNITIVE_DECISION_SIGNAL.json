@@ -1,0 +1,9 @@
+{
+  "event_type": "COGNITIVE_DECISION_SIGNAL",
+  "fusion_score": 0,
+  "risk_level": 0,
+  "confidence_score": 0,
+  "decision": "",
+  "guardian_validation": false,
+  "timestamp": ""
+}
