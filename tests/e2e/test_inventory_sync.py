@@ -1,11 +1,10 @@
-from core.inventory_runtime.service import InventoryRuntime
+from core.inventory_sync.service import InventorySyncService
 
-def test_inventory_runtime():
-    runtime = InventoryRuntime()
-    result = runtime.process_inventory_event({
-        "type":"InventoryUpdated",
-        "sku":"SKU-001",
-        "branch":"BR001"
+def test_inventory_sync():
+    service = InventorySyncService()
+    result = service.sync({
+        "sku": "SKU-001",
+        "branch": "BR001",
+        "quantity": 10
     })
-
-    assert result["status"] == "processed"
+    assert result["status"] == "synced"
