@@ -1,14 +1,8 @@
-SERVICES = [
-    "TMS",
-    "WMS",
-    "ERP",
-    "GPS",
-    "Telemetry",
-    "EventBus"
-]
-
-def health():
-    return {
-        service: "HEALTHY"
-        for service in SERVICES
-    }
+class HealthService:
+    def status(self):
+        return {
+            "runtime": "HEALTHY",
+            "event_bus": "HEALTHY",
+            "orchestrator": "HEALTHY",
+            "telemetry": "HEALTHY"
+        }
