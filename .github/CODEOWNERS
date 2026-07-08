@@ -1,3 +1,13 @@
 # AEON MATRIX Governance Ownership
 
-* @aeon-intelligence
+# Core AI Brain
+/core/ @aeon-intelligence
+
+# Security Layer
+/core/security* @aeon-intelligence
+
+# Governance
+/.github/ @aeon-intelligence
+
+# Telemetry Schema
+/telemetry/ @aeon-intelligence
