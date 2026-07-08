@@ -1,0 +1,9 @@
+{
+  "event_type": "AUTONOMOUS_WORKFLOW_STATUS",
+  "system": "AEON_MATRIX",
+  "workflow_id": "",
+  "decision_source": "",
+  "governance": "",
+  "execution_status": "",
+  "timestamp": ""
+}
