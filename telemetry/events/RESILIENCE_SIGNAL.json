@@ -1,0 +1,10 @@
+{
+  "event_type": "RESILIENCE_SIGNAL",
+  "failure_count": 0,
+  "availability": 100,
+  "criticality": 0,
+  "resilience_score": 100,
+  "status": "",
+  "recovery_plan_generated": false,
+  "timestamp": ""
+}
