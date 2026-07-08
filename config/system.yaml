@@ -1,0 +1,11 @@
+platform: AEON_MATRIX
+mode: development
+
+integrations:
+  tms: enabled
+  wms: enabled
+  erp: enabled
+  gps: enabled
+
+governance:
+  human_in_the_loop: true
