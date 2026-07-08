@@ -1,0 +1,9 @@
+{
+  "event_type": "COGNITIVE_DECISION_RESULT",
+  "system": "AEON_MATRIX",
+  "decision": "",
+  "confidence": 0,
+  "risk_score": 0,
+  "governance": "",
+  "timestamp": ""
+}
