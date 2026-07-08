@@ -1,0 +1,10 @@
+{
+  "event_type": "DIGITAL_TWIN_SIMULATION_RESULT",
+  "scenario_id": "",
+  "impact_score": 0,
+  "risk_score": 0,
+  "opportunity_score": 0,
+  "recommendation": "",
+  "confidence": 0,
+  "timestamp": ""
+}
