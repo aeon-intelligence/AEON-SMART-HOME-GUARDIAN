@@ -1,17 +1,24 @@
-# AEON MATRIX Change Request
+# AEON MATRIX Pull Request
 
 ## Change Summary
+
 -
 
-## Security Impact
-- [ ] No security impact
-- [ ] Security review required
+## Architecture Impact
 
-## Testing Completed
-- [ ] Unit Test
-- [ ] Security Scan
-- [ ] Integration Test
+- [ ] No impact
+- [ ] Module change
+- [ ] Core intelligence change
+- [ ] Security/Governance change
+
+## Validation
+
+- [ ] Unit Test Passed
+- [ ] Integration Test Passed
+- [ ] Security Scan Passed
 
 ## Governance Check
-- [ ] Documentation updated
+
+- [ ] No secret exposed
+- [ ] Audit requirement reviewed
 - [ ] Backward compatibility checked
