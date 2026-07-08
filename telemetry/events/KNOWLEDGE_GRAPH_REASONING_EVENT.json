@@ -1,0 +1,8 @@
+{
+  "event_type": "KNOWLEDGE_GRAPH_REASONING_EVENT",
+  "node_count": 0,
+  "relation_count": 0,
+  "pattern_discovery": false,
+  "mother_brain_ready": false,
+  "timestamp": ""
+}
