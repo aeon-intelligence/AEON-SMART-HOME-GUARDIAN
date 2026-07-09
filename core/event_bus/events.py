@@ -1,7 +1,7 @@
 class EventBus:
 
-    def publish(self,event):
-        print("EVENT:",event)
+    def publish(self, event):
+        print(f"[EVENT] {event}")
 
-    def subscribe(self,name):
+    def subscribe(self, name):
         pass
