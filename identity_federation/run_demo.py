@@ -1,31 +1,28 @@
-from identity_federation.identity.federation import authenticate
-from identity_federation.secrets.secrets_manager import get_secret
-from identity_federation.certificate.certificate_manager import validate
-from identity_federation.key_management.key_manager import rotate
-from identity_federation.memory.identity_memory import save
+def safe_view(data):
+    if isinstance(data, dict):
+        return {
+            key: "***REDACTED***"
+            if key.lower() in ("secret", "key", "token", "password")
+            else safe_view(value)
+            for key, value in data.items()
+        }
+
+    if isinstance(data, list):
+        return [safe_view(item) for item in data]
+
+    return data
 
 
-identity = authenticate("warehouse operator")
+def main():
+    memory = {
+        "identity": "AEON-USER",
+        "secret": "hidden-secret",
+        "key": "hidden-key"
+    }
 
-secret = get_secret("WMS API KEY")
-
-certificate = validate("DEVICE CERTIFICATE")
-
-key = rotate("MASTER KEY")
-
-
-memory = save({
-    "identity": "REDACTED",
-    "secret": "PROTECTED",
-    "certificate": "VALID",
-    "key": "ROTATED"
-})
+    print("=== IDENTITY MEMORY ===")
+    print(safe_view(memory))
 
 
-print({
-    "identity_status": "VERIFIED",
-    "secret_status": "PROTECTED",
-    "certificate_status": "VALID",
-    "key_status": "ROTATED",
-    "memory_status": "STORED"
-})
+if __name__ == "__main__":
+    main()
