@@ -1,0 +1,9 @@
+{
+  "event_type": "WMS_OPERATION_SIGNAL",
+  "warehouse_id": "",
+  "signal_type": "",
+  "risk_score": 0,
+  "inventory_status": "",
+  "order_status": "",
+  "timestamp": ""
+}

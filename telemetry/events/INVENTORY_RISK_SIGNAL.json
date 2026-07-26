@@ -1,0 +1,10 @@
+{
+  "event_type": "INVENTORY_RISK_SIGNAL",
+  "warehouse_id": "",
+  "sku": "",
+  "risk_type": "",
+  "risk_score": 0,
+  "stock_level": 0,
+  "recommendation": "",
+  "timestamp": ""
+}

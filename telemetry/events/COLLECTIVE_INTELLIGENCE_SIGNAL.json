@@ -1,0 +1,10 @@
+{
+  "event_type": "COLLECTIVE_INTELLIGENCE_SIGNAL",
+  "agent_count": 0,
+  "memory_count": 0,
+  "learning_signal_count": 0,
+  "intelligence_score": 0,
+  "state": "",
+  "guardian_validation": false,
+  "timestamp": ""
+}

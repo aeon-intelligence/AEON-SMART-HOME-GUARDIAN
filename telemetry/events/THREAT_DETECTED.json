@@ -1,0 +1,9 @@
+{
+  "event_type": "THREAT_DETECTED",
+  "severity": "LOW",
+  "source": "Threat Detection Engine",
+  "risk_score": 0,
+  "category": "",
+  "description": "",
+  "timestamp": ""
+}

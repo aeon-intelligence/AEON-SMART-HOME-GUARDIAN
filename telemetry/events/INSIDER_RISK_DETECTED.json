@@ -1,0 +1,9 @@
+{
+  "event_type": "INSIDER_RISK_DETECTED",
+  "identity_id": "",
+  "risk_score": 0,
+  "risk_category": "",
+  "signals": [],
+  "recommended_action": "",
+  "timestamp": ""
+}

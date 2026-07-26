@@ -1,0 +1,9 @@
+{
+  "event_type": "SECURITY_ALERT",
+  "severity": "MEDIUM",
+  "source": "Cyber Intelligence Agent",
+  "risk_score": 0,
+  "description": "",
+  "recommended_action": "",
+  "timestamp": ""
+}

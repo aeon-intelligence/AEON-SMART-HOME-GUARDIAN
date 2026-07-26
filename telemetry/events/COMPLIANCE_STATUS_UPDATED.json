@@ -1,0 +1,9 @@
+{
+  "event_type": "COMPLIANCE_STATUS_UPDATED",
+  "policy_id": "",
+  "compliance_score": 0,
+  "violations": [],
+  "audit_reference": "",
+  "status": "",
+  "timestamp": ""
+}

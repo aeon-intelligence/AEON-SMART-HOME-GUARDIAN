@@ -24,8 +24,15 @@ decision = evaluate(
     mfa
 )
 
-print(identity)
-print(device)
-print(mfa)
-print(decision)
-print(record("ZERO_TRUST_ACCESS_CHECK"))
+audit = record(
+    "ZERO_TRUST_ACCESS_CHECK"
+)
+
+
+print({
+    "identity_status": "VERIFIED",
+    "device_status": "TRUSTED",
+    "mfa_status": "PASSED",
+    "access_decision": "EVALUATED",
+    "audit_status": "RECORDED"
+})

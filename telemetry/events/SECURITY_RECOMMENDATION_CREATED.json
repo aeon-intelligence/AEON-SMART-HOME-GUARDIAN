@@ -1,0 +1,9 @@
+{
+  "event_type": "SECURITY_RECOMMENDATION_CREATED",
+  "recommendation_id": "",
+  "risk_score": 0,
+  "category": "",
+  "recommended_action": "",
+  "approval_required": true,
+  "timestamp": ""
+}

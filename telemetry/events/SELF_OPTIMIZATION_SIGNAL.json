@@ -1,0 +1,10 @@
+{
+  "event_type": "SELF_OPTIMIZATION_SIGNAL",
+  "latency": 0,
+  "cpu_usage": 0,
+  "memory_usage": 0,
+  "optimization_score": 0,
+  "status": "",
+  "recommendation_generated": false,
+  "timestamp": ""
+}

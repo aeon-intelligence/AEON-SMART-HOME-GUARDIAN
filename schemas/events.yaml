@@ -1,0 +1,6 @@
+events:
+  - InventoryUpdated
+  - OrderCreated
+  - OrderReserved
+  - ShipmentDispatched
+  - DeliveryCompleted

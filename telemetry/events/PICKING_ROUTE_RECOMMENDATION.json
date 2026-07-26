@@ -1,0 +1,10 @@
+{
+  "event_type": "PICKING_ROUTE_RECOMMENDATION",
+  "order_id": "",
+  "warehouse_id": "",
+  "worker_id": "",
+  "route": [],
+  "estimated_time": 0,
+  "priority": "",
+  "timestamp": ""
+}

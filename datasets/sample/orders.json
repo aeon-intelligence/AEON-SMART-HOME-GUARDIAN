@@ -1,0 +1,9 @@
+[
+  {
+    "order_id": "SIM-0001",
+    "origin": "Warehouse-A",
+    "destination": "Store-101",
+    "priority": "HIGH",
+    "status": "READY"
+  }
+]

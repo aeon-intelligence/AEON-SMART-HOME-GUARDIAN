@@ -1,0 +1,10 @@
+{
+  "event_type": "SECURITY_INTELLIGENCE_SIGNAL",
+  "threat_level": 0,
+  "anomaly_score": 0,
+  "asset_criticality": 0,
+  "risk_score": 0,
+  "recommended_action": "",
+  "guardian_validation": false,
+  "timestamp": ""
+}

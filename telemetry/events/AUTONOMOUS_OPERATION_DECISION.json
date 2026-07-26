@@ -1,0 +1,10 @@
+{
+  "event_type": "AUTONOMOUS_OPERATION_DECISION",
+  "decision_id": "",
+  "warehouse_id": "",
+  "signal_source": "",
+  "recommended_action": "",
+  "confidence_score": 0,
+  "approval_required": true,
+  "timestamp": ""
+}

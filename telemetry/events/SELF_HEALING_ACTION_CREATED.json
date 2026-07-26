@@ -1,0 +1,9 @@
+{
+  "event_type": "SELF_HEALING_ACTION_CREATED",
+  "incident_id": "",
+  "detected_issue": "",
+  "root_cause": "",
+  "recommended_action": "",
+  "approval_status": "",
+  "timestamp": ""
+}

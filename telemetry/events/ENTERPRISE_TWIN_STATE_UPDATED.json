@@ -1,0 +1,9 @@
+{
+  "event_type": "ENTERPRISE_TWIN_STATE_UPDATED",
+  "twin_id": "",
+  "domain": "",
+  "health_score": 0,
+  "risk_level": "",
+  "simulation_status": "",
+  "timestamp": ""
+}
