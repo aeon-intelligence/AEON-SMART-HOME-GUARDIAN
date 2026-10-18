@@ -1,18 +1,81 @@
-name: AEON MATRIX CI
+name: "AEON MATRIX CI"
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aeon-matrix-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
+    name: Python CI
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: read
 
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-python@v6
+      - name: Set Up Python
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - run: python --version
+      - name: Verify Python
+        run: python --version
+
+      - name: Verify Python Syntax
+        shell: bash
+        run: |
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+
+          excluded = {
+              ".git",
+              ".venv",
+              "venv",
+              "node_modules",
+              "__pycache__",
+              ".tox",
+              ".nox",
+          }
+
+          files = [
+              path
+              for path in Path(".").rglob("*.py")
+              if not any(part in excluded for part in path.parts)
+          ]
+
+          errors = []
+
+          for path in files:
+              try:
+                  ast.parse(
+                      path.read_text(encoding="utf-8-sig"),
+                      filename=str(path),
+                  )
+              except (SyntaxError, UnicodeError, OSError) as exc:
+                  errors.append(f"{path}: {exc}")
+
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(1)
+
+          print(f"Python syntax check passed: {len(files)} file(s)")
+          PY
