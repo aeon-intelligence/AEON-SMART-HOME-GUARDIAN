@@ -1,3 +1,4 @@
+
 name: "AEON MATRIX Security Hardening"
 
 on:
@@ -16,6 +17,9 @@ jobs:
     name: Security Gate
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -24,6 +28,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: Install Security Tools
         run: |
@@ -36,13 +41,15 @@ jobs:
             -x ./.venv,./.git,./node_modules
 
       - name: Install Project Dependencies
+        shell: bash
         run: |
           if [ -f requirements.txt ]; then
             python -m pip install -r requirements.txt
           elif [ -f pyproject.toml ]; then
             python -m pip install .
           else
-            echo "No supported Python dependency manifest found."
+            echo "::error::No requirements.txt or pyproject.toml found."
+            echo "Configure the dependency installation step for this project."
             exit 1
           fi
 
