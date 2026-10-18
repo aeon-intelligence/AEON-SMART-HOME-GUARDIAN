@@ -4,40 +4,76 @@ on:
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aeon-matrix-security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   security-check:
     name: Security Gate
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     permissions:
       contents: read
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
-      - name: Setup Python
+      - name: Set Up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Install Security Tools
+        shell: bash
         run: |
           python -m pip install --upgrade pip
-          pip install bandit pip-audit
+          python -m pip install bandit pip-audit
 
       - name: Python Security Scan
+        shell: bash
         run: |
-          bandit -r . -x ./.venv || true
+          if [ -d .git ]; then
+            bandit -r . \
+              -x ./.git,./.venv,./venv,./node_modules,./.tox,./.nox
+          else
+            bandit -r . \
+              -x ./.venv,./venv,./node_modules,./.tox,./.nox
+          fi
 
-      - name: Dependency Audit
+      - name: Install Project Dependencies
+        shell: bash
         run: |
-          pip-audit || true
+          if [ -f requirements.txt ]; then
+            python -m pip install -r requirements.txt
 
-      - name: Security Gate Passed
+          elif [ -f pyproject.toml ]; then
+            python -m pip install .
+
+          elif [ -f setup.py ]; then
+            python -m pip install .
+
+          else
+            echo "::error::No supported Python dependency manifest found."
+            echo "Expected requirements.txt, pyproject.toml, or setup.py."
+            exit 1
+          fi
+
+      - name: Audit Python Dependencies
+        shell: bash
         run: |
-          echo "AEON MATRIX SECURITY GATE READY"
+          python -m pip_audit
